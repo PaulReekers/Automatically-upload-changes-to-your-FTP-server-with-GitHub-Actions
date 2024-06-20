@@ -11,27 +11,30 @@ This automation ensures your FTP server always has the latest version of your fi
 
 Click “New repository secret”
 
-Name: `FTP_SERVER`
+- Name: `FTP_SERVER`
 
-Secret: *your ftp.server*
+- Secret: `your ftp.server`
 
 Press “Add secret”
+
 
 Click “New repository secret”
 
-Name: `FTP_USERNAME`
+- Name: `FTP_USERNAME`
 
-Secret: *your username*
+- Secret: `your username`
 
 Press “Add secret”
+
 
 Click “New repository secret”
 
-Name: `FTP_PASSWORD`
+- Name: `FTP_PASSWORD`
 
-Secret: *your password*
+- Secret: `your ftp password`
 
 Press “Add secret”
+
 
 ## Setup new workflow:
 
@@ -40,6 +43,7 @@ Press “Add secret”
 Click “set up a workflow yourself “
 
 Paste the YAML code below
+
 ```yaml
 name: 🚀 Build and deploy
 
