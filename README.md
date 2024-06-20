@@ -1,4 +1,4 @@
-# Automatically-upload-changes-to-your-FTP-server-with-GitHub-Actions 🚀
+# Automatically upload changes to your FTP server with GitHub Actions 🚀
 If you're using a shared hosting for your project or you deployment method is through FTP, you can  automate your code deploys! 
 
 If you're using a shared hosting for your project or you deployment method is through FTP, you can  automate your code deploys! The workflow is triggered by events such as code commits or merges. With GitHub Actions, you set up the environment, including any necessary dependencies or secrets (like FTP credentials). Using an FTP action, the workflow connects to your FTP server and uploads the changed files from your repository. The workflow logs the outcome of the transfer, letting you know if it succeeded or if there were issues.
