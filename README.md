@@ -16,6 +16,7 @@ Click “New repository secret”
 - Secret: `your ftp.server`
 
 Press “Add secret”
+
 ---
 
 Click “New repository secret”
@@ -25,6 +26,7 @@ Click “New repository secret”
 - Secret: `your username`
 
 Press “Add secret”
+
 ---
 
 Click “New repository secret”
