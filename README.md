@@ -50,44 +50,52 @@ Click “set up a workflow yourself “
 Paste the YAML code below
 
 ```yaml
-name: 🚀 Build and deploy
+name: 🚀 Build and deploy to FTP
 
 on:
   push:
     branches: [main]
-  workflow_dispatch:
+  pull_request:
+    branches: [main]
 
 jobs:
   build:
-    
-    name: Build 🔨
+    name: 🔨 Build
     runs-on: ubuntu-latest
     steps:
-      - name: checkout repository
-        uses: actions/checkout@main
-      - name: Installing project dependencies
+      - name: 🚚 Checkout repository
+        uses: actions/checkout@v2
+
+      - name: 🛠️ Install dependencies
         run: npm ci
-      - name: Build Dependencies
+
+      - name: 🏗️ Build project
         run: npm run build
-      - name: Archive production artifact
-        uses: actions/upload-artifact@main 
+
+      - name: 🗿 Archive production artifact
+        uses: actions/upload-artifact@v4
         with:
           name: dist
           path: dist
 
-  deploy: 
-    name: Deploy 🚚 
+  deploy:
+    name: 🎉 Deploy
     needs: build
     runs-on: ubuntu-latest
     steps:
-      - name: Get latest code
-        uses: actions/checkout@main
-      - name: Download artifact
-        uses: actions/download-artifact@main
+      - name: 🚚 Checkout repository
+        uses: actions/checkout@v2
+
+      - name: 🗿 Download artifact
+        uses: actions/download-artifact@v4
         with:
           name: dist
           path: dist
-      - name: Sync files to host
+
+      - name: 📂 List files in dist directory
+        run: ls -la dist
+
+      - name: 📂 Sync files to FTP server
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
           server: ${{ secrets.FTP_SERVER }}
@@ -95,6 +103,7 @@ jobs:
           password: ${{ secrets.FTP_PASSWORD }}
           local-dir: dist/
           server-dir: httpdocs/
+
 ```
 Click “Commit changes”
 
