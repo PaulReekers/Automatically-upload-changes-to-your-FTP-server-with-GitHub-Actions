@@ -10,7 +10,7 @@ This automation ensures your FTP server always has the latest version of your fi
 
 ## Setup your secrets:
 
-**Settings → Secrets and variables → Actions**
+**Settings → Secrets and variables**
 
 Click “New repository secret”
 
@@ -43,7 +43,7 @@ Press “Add secret”
 ---
 ## Setup new workflow:
 
-**Actions → New workflow**
+**Actions**
 
 Click “set up a workflow yourself “
 
